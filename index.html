@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10141f">
+  <meta name="description" content="Play a quick round of Rock Paper Scissors. Choose your move and challenge the computer.">
+  <title>Rock Paper Scissors — Play a round</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Rock Paper Scissors home"><span class="brand-mark">✦</span> PLAY<span class="brand-accent">/</span>GROUND</a>
+      <span class="top-note"><span class="live-dot"></span> QUICK MATCH</span>
+    </header>
+
+    <section class="game" aria-labelledby="game-title">
+      <div class="intro">
+        <p class="eyebrow">THE CLASSIC, REMIXED</p>
+        <h1 id="game-title">Make your<br>move<span>.</span></h1>
+        <p class="intro-copy">A little luck. A little strategy. First to three takes the bragging rights.</p>
+        <div class="round-rule"><span class="rule-icon">↗</span><span><strong>Best of five</strong><br>Every round counts.</span></div>
+      </div>
+
+      <div class="game-panel">
+        <div class="scoreboard" aria-label="Score">
+          <div class="score-side"><span class="score-label">YOU</span><strong id="player-score">0</strong></div>
+          <div class="score-center"><span>ROUND</span><strong id="round-number">01</strong></div>
+          <div class="score-side computer-score"><span class="score-label">COMPUTER</span><strong id="computer-score">0</strong></div>
+        </div>
+
+        <div class="arena" id="arena" aria-live="polite" aria-atomic="true">
+          <div class="fighter">
+            <span class="fighter-label">YOU</span>
+            <div class="hand hand-player" id="player-hand" aria-hidden="true">?</div>
+            <span class="fighter-choice" id="player-choice">YOUR MOVE</span>
+          </div>
+          <div class="versus"><span>VS</span></div>
+          <div class="fighter">
+            <span class="fighter-label">CPU</span>
+            <div class="hand hand-computer" id="computer-hand" aria-hidden="true">?</div>
+            <span class="fighter-choice" id="computer-choice">WAITING</span>
+          </div>
+        </div>
+
+        <p class="round-message" id="round-message">Pick a hand to start the round.</p>
+        <div class="choices" role="group" aria-label="Choose your hand">
+          <button class="choice" type="button" data-choice="rock" aria-label="Choose rock">
+            <span class="choice-hand" aria-hidden="true">✊</span><span>ROCK</span>
+          </button>
+          <button class="choice" type="button" data-choice="paper" aria-label="Choose paper">
+            <span class="choice-hand" aria-hidden="true">✋</span><span>PAPER</span>
+          </button>
+          <button class="choice" type="button" data-choice="scissors" aria-label="Choose scissors">
+            <span class="choice-hand" aria-hidden="true">✌️</span><span>SCISSORS</span>
+          </button>
+        </div>
+        <div class="panel-footer">
+          <span>✦ <span id="tie-score">0</span> TIES</span>
+          <button class="reset-button" id="reset-game" type="button"><span aria-hidden="true">↻</span> RESET GAME</button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer"><span>ROCK BEATS SCISSORS</span><i>·</i><span>SCISSORS BEATS PAPER</span><i>·</i><span>PAPER BEATS ROCK</span></footer>
+  </main>
+</body>
+</html>
